@@ -22,7 +22,7 @@ The name of the VM to be managed.
 .PARAMETER Operation
 
 The operation to be performed.
-
+$""
 .EXAMPLE
 
 .\ManageVmState
@@ -62,6 +62,18 @@ function GetIndex($Array) {
 function FormatVm($VM) {
     $VMStatus = ($VM | Get-AzureRmVM -Status).Statuses[1].DisplayStatus 3>$null
     return "$($VM.Name) (RG: $($VM.ResourceGroupName), Status: $vmStatus)"
+}
+
+try
+{
+    Get-AzureRmSubscription
+}
+catch
+{
+    Write-Host "LOG IN TO AZURE" -ForegroundColor Cyan
+    if ($_.Exception.Message -eq "Run Login-AzureRmAccount to login.") {
+        Login-AzureRmAccount
+    }
 }
 
 if (-not $SubscriptionId) {

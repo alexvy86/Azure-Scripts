@@ -22,7 +22,7 @@ The name of the VM to be managed.
 .PARAMETER Operation
 
 The operation to be performed.
-$""
+
 .EXAMPLE
 
 .\ManageVmState

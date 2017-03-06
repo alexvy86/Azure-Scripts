@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "centralus"
+        },
+        "virtualMachineName": {
+            "value": null
+        },
+        "virtualMachineSize": {
+            "value": "Standard_D2_v2"
+        },
+        "adminUsername": {
+            "value": null
+        },
+        "adminPassword": {
+            "value": null
+        },
+        "virtualNetworkName": {
+            "value": "vnet-centralus"
+        },
+        "subnetName": {
+            "value": "main-workspace"
+        },
+        "publicIpAddressType": {
+            "value": "Dynamic"
+        }
+    }
+}
